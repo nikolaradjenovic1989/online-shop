@@ -1,0 +1,55 @@
+<div class="row" ng-controller="homeCtrl">
+
+	<div class="col-lg-3">
+		<h1 class="display-4">Korpa</h1>
+		<h3>Ukupna cena: {{ukupnaCena}}€</h3>
+		<button class="btn btn-success btn-lg btn-block"
+			ng-click="kreirajKorpu(korisnik.id, artikliUKorpi)"
+			ng-disabled="artikliUKorpi.length == 0">
+			<i class="fa fa-shopping-cart" aria-hidden="true"></i>Kupi
+		</button>
+	</div>
+
+	<div class="col-lg-9">
+
+		<div class="col-xs-12">
+
+			<table id="listaArtikala" class="table table-striped table-borderd">
+
+				<thead>
+					<tr>
+						<th>Slika</th>
+						<th>Naziv</th>
+						<th>Opis</th>
+						<th>Cena</th>
+						<th>Akcija</th>
+					</tr>
+
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="a in artikliUKorpi">
+						<td><img class="card-img-top" ng-src="{{a.imageUrl}}" alt=""></td>
+						<th>{{a.naziv}}</th>
+						<td>{{a.opis}}</td>
+						<th><p ng-class="{ customCss: a.popust != null }">
+								<i>{{a.cena}}€</i>
+							</p>
+							<p>
+								<i ng-show="a.popust != null">Popust {{a.popust}}%:
+									{{a.cenaSaPopustom}}€</i>
+							</p></th>
+						<td><a class="btn btn-danger btn-lg btn-block" href=""
+							ng-click="delete(korisnik.id, a.id)">Ukloni</a></td>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+</div>
+<style>
+.customCss {
+	text-decoration: line-through;
+}
+</style>

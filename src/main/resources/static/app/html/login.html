@@ -1,0 +1,46 @@
+<div class="simple-login-container" ng-controller="homeCtrl">
+	<h2>Login</h2>
+	<form action="/login" method="POST" name="f">
+		<div class="row">
+			<div class="col-md-12 form-group">
+				<input type="text" class="form-control" placeholder="Username"
+					name="username">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 form-group">
+				<input type="password" placeholder="Enter your Password"
+					class="form-control" name="password">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 form-group">
+				<input type="submit" class="btn btn-block btn-login" value="Login"
+					name="submit" ng-disabled="ulogovan">
+			</div>
+		</div>
+	</form>
+</div>
+
+<style>
+body {
+	background-color: #5286F3;
+	color: #fff;
+}
+
+.simple-login-container {
+	width: 300px;
+	max-width: 100%;
+	margin: 50px auto;
+}
+
+.simple-login-container h2 {
+	text-align: center;
+	font-size: 20px;
+}
+
+.simple-login-container .btn-login {
+	background-color: #FF5964;
+	color: #fff;
+}
+</style>

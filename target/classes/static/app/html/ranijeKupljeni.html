@@ -1,0 +1,46 @@
+<div class="row" ng-controller="homeCtrl">
+
+	<div class="col-lg-3">
+		<h1 class="display-4">Ranije kupljeni artikli</h1>
+	</div>
+
+	<div class="col-lg-9">
+
+		<div class="col-xs-12">
+
+			<table id="listaArtikala" class="table table-striped table-borderd">
+
+				<thead>
+					<tr>
+						<th>Slika</th>
+						<th>Naziv</th>
+						<th>Opis</th>
+						<th>Cena</th>
+					</tr>
+
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="a in ranijeKupljeni">
+						<td><img class="card-img-top" ng-src="{{a.imageUrl}}" alt=""></td>
+						<th>{{a.naziv}}</th>
+						<td>{{a.opis}}</td>
+						<th><p ng-class="{ customCss: a.popust != null }">
+								<i>{{a.cena}}€</i>
+							</p>
+							<p>
+								<i ng-show="a.popust != null">Popust {{a.popust}}%:
+									{{a.cenaSaPopustom}}€</i>
+							</p></th>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+</div>
+<style>
+.customCss {
+	text-decoration: line-through;
+}
+</style>

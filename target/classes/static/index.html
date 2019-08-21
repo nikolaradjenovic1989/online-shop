@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="onlineShopApp">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Online Shop</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap data tables CSS -->
+<link href="/assets/css/dataTables.bootstrap.css" rel="stylesheet">
+
+<!-- Register page CSS -->
+<link href="/assets/css/register.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="/assets/css/shop-homepage.css" rel="stylesheet">
+
+<!-- AngularJS -->
+<script src="/assets/js/angular.min.js"></script>
+<script src="/assets/js/angular-route.min.js"></script>
+
+<!-- Jquery -->
+<script src="/assets/js/jquery.min.js"></script>
+
+<!-- Jquery validator -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+
+<!-- Register js -->
+<script src="/assets/js/register.js"></script>
+
+<!-- Custom JS -->
+<script src="/app/js/main.js"></script>
+
+<script src="https://use.fontawesome.com/c560c025cf.js"></script>
+
+</head>
+
+<body>
+
+	<div id="custom">
+		<div id="main">
+			<!-- Navigation -->
+			<div ng-include="'/app/html/navbar.html'"></div>
+
+			<!-- Page Content -->
+			<div class="container">
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div ng-include="'/app/html/footer.html'"></div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Data table plugin -->
+	<script src="/assets/js/jquery.dataTables.js"></script>
+	<script src="/assets/js/dataTables.bootstrap.js"></script>
+	
+</body>
+
+</html>

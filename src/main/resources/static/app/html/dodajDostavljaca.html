@@ -1,0 +1,45 @@
+<div class="row" ng-controller="dodavanjeDostavljaca">
+
+	<div class="col-lg-3">
+		<h2 class="my-2">Dodavanje dostavljača</h2>
+	</div>
+	<div class="col-lg-9">
+		<form>
+			<div class="form-group">
+				<label class="font-weight-bold">Ime:</label> <input
+					class="form-control" placeholder="Ime" ng-model="newDostavljac.ime">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Prezime:</label> <input
+					class="form-control" placeholder="Prezime"
+					ng-model="newDostavljac.prezime">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Korisničko ime:</label> <input
+					class="form-control" placeholder="Korisničko ime"
+					ng-model="newDostavljac.korisnickoIme">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Lozinka:</label> <input
+					type="password" class="form-control" placeholder="Lozinka"
+					ng-model="newDostavljac.lozinka">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Email:</label> <input
+					class="form-control" placeholder="Email"
+					ng-model="newDostavljac.email">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Telefon:</label> <input
+					class="form-control" placeholder="Telefon"
+					ng-model="newDostavljac.telefon">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Adresa:</label> <input
+					class="form-control" placeholder="Adresa"
+					ng-model="newDostavljac.adresa">
+			</div>
+			<button class="btn btn-primary" ng-click="dodaj()">Dodaj</button>
+		</form>
+	</div>
+</div>

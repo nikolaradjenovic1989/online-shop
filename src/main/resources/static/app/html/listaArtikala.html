@@ -1,0 +1,99 @@
+<div class="row" ng-controller="homeCtrl">
+
+	<div class="col-lg-4">
+
+		<h2 class="my-2">Pretraga</h2>
+		<form>
+			<div class="form-group">
+				<h5>Naziv:</h5>
+				<input class="form-control" placeholder="Naziv" id="naziv"
+					ng-model="searchParams.naziv">
+			</div>
+			<div class="form-group">
+				<h5>Opis:</h5>
+				<input class="form-control" placeholder="Opis"
+					ng-model="searchParams.opis">
+			</div>
+			<div class="form-group">
+				<h5>Cena od:</h5>
+				<input class="form-control" placeholder="Cena od"
+					ng-model="searchParams.cenaOd">
+			</div>
+			<div class="form-group">
+				<h5>Cena do:</h5>
+				<input class="form-control" placeholder="Cena do"
+					ng-model="searchParams.cenaDo">
+			</div>
+			<button class="btn btn-primary" ng-click="search()">Pretraži</button>
+		</form>
+
+		&nbsp;
+		<div class="form-group">
+			<button class="btn btn-info" ng-click="getRastuce()">Sortiranje
+				po ceni rastuće</button>
+			<button class="btn btn-secondary" ng-click="getOpadajuce()">Sortiranje
+				po ceni opadajuće</button>
+			<button class="btn btn-success" ng-click="artikliNaPopustu()">Artikli
+				na popustu</button>
+		</div>
+	</div>
+
+
+
+	<div class="col-lg-8">
+
+		<div class="col-xs-12">
+
+			<table id="listaArtikala" class="table table-striped table-borderd">
+
+				<thead>
+					<tr>
+						<th>Slika</th>
+						<th>Naziv</th>
+						<th>Opis</th>
+						<th>Cena</th>
+						<th ng-hide="korisnik.uloga === 'DOSTAVLJAC'">Akcija</th>
+					</tr>
+
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="a in artikli">
+						<td><img class="card-img-top" ng-src="{{a.imageUrl}}" alt=""></td>
+						<th>{{a.naziv}}</th>
+						<td>{{a.opis}}</td>
+						<th><p ng-class="{ customCss: a.popust != null }">
+								<i>{{a.cena}}€</i>
+							</p>
+							<p>
+								<i ng-show="a.popust != null">Popust {{a.popust}}%:
+									{{a.cenaSaPopustom}}€</i>
+							</p></th>
+						<td><a class="btn btn-success btn-lg btn-block" href=""
+							ng-hide="korisnik.uloga === 'DOSTAVLJAC' || korisnik.uloga === 'ADMIN'"
+							ng-click="dodajUKorpu(a)"><i class="fa fa-shopping-cart"
+								aria-hidden="true"></i></a> &nbsp; <a
+							class="btn btn-danger btn-lg btn-block" href=""
+							ng-hide="korisnik.uloga === 'DOSTAVLJAC' || korisnik.uloga === 'ADMIN'"
+							ng-click="dodajUOmiljene(a)"><i class="fa fa-heart"></i></a></td>
+						<td ng-show="korisnik.uloga === 'ADMIN'"><a
+							class="btn btn-warning btn-lg btn-block" href=""
+							ng-click="goToEdit(a.id)"><i class="fa fa-pencil"
+								aria-hidden="true"></i></a><a
+							class="btn btn-danger btn-lg btn-block" href=""
+							ng-click="obrisi(a.id)"><i class="fa fa-trash"
+								aria-hidden="true"></i></a> <a
+							class="btn btn-success btn-lg btn-block" href=""
+							ng-click="goToDodaj()"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+</div>
+<style>
+.customCss {
+	text-decoration: line-through;
+}
+</style>

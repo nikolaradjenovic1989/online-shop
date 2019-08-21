@@ -1,0 +1,79 @@
+<form class="form-horizontal" role="form" id="forma" ng-controller="registerCtrl">
+	<h2><mark>Registracija kupca</mark></h2>
+	<br/>
+	<div class="form-group">
+		<label for="korIme" class="col-sm-4 control-label">*Korisničko ime:</label>
+		<div class="col-sm-9">
+			<p class="validacija" ng-show="korImeValidacija">Korisničko ime mora imati minimum 3 karaktera!</p>
+			<input type="text" id="korIme" name="korIme" placeholder="Korisničko ime"
+				class="form-control" autofocus ng-model="kupac.korisnickoIme" ng-click="korImeValidacija = false">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="lozinka" class="col-sm-3 control-label">*Lozinka:</label>
+		<div class="col-sm-9">
+			<p class="validacija" ng-show="lozinkaValidacija">Lozinka mora imati minimum 3 karaktera!</p>
+			<input type="password" id="lozinka" name="lozinka" placeholder="Lozinka"
+				class="form-control" autofocus ng-model="kupac.lozinka" ng-click="lozinkaValidacija = false">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="ime" class="col-sm-3 control-label">*Ime:</label>
+		<div class="col-sm-9">
+			<p class="validacija" ng-show="imeValidacija">Polje mora biti popunjeno!</p>
+			<input type="text" id="ime" name="ime" placeholder="Ime"
+				class="form-control" ng-model="kupac.ime" ng-click="imeValidacija = false">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="prezime" class="col-sm-3 control-label">*Prezime:</label>
+		<div class="col-sm-9">
+			<p class="validacija" ng-show="prezimeValidacija">Polje mora biti popunjeno!</p>
+			<input type="text" id="prezime" name="prezime" placeholder="Prezime"
+				class="form-control" ng-model="kupac.prezime" ng-click="prezimeValidacija = false">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="telefon" class="col-sm-3 control-label">Telefon:</label>
+		<div class="col-sm-9">
+			<p class="validacija" ng-show="telefonValidacija">Polje mora biti popunjeno!</p>
+			<input type="text" id="telefon" name="telefon" placeholder="Telefon"
+				class="form-control" ng-model="kupac.telefon" ng-click="telefonValidacija = false">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="email" class="col-sm-3 control-label">*Email:</label>
+		<div class="col-sm-9">
+			<p class="validacija" ng-show="emailValidacija">Polje mora biti popunjeno i email mora biti validan!</p>
+			<input type="email" id="email" name="email" class="form-control" 
+				placeholder="example@gmail.com" ng-model="kupac.email" ng-click="emailValidacija = false">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="adresa" class="col-sm-3 control-label">Adresa:</label>
+		<div class="col-sm-9">
+			<p class="validacija" ng-show="adresaValidacija">Polje mora biti popunjeno!</p>
+			<input type="text" id="adresa" name="adresa" placeholder="Adresa"
+				class="form-control" ng-model="kupac.adresa" ng-click="adresaValidacija = false">
+		</div>
+	</div>
+	<!-- /.form-group -->
+	<div class="form-group">
+		<div class="col-sm-9 col-sm-offset-3">
+			<span class="help-block">*Obavezna polja</span>
+		</div>
+	</div>
+	<input type="submit" class="btn btn-primary btn-block" value="Registruj se" ng-click="validateFunction()">
+</form>
+<!-- /form -->
+
+<!-- Custom style for register page only -->
+<style>
+body {
+    background: url('https://images.pexels.com/photos/917475/pexels-photo-917475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') fixed;
+    background-size: cover;
+}
+.validacija {
+	color: red;
+}
+</style>

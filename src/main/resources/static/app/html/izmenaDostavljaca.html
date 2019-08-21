@@ -1,0 +1,45 @@
+<div class="row" ng-controller="izmenaDostavljaca">
+
+	<div class="col-lg-3">
+		<h2 class="my-2">Izmena dostavljača</h2>
+	</div>
+	<div class="col-lg-9">
+		<form>
+			<div class="form-group">
+				<label class="font-weight-bold">Ime:</label> <input
+					class="form-control" placeholder="Ime" ng-model="dostavljac.ime">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Prezime:</label> <input
+					class="form-control" placeholder="Prezime"
+					ng-model="dostavljac.prezime">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Korisničko ime:</label> <input
+					class="form-control" placeholder="Korisničko ime"
+					ng-model="dostavljac.korisnickoIme">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Lozinka:</label> <input
+					type="password" class="form-control" placeholder="Lozinka"
+					ng-model="dostavljac.lozinka">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Email:</label> <input
+					class="form-control" placeholder="Email"
+					ng-model="dostavljac.email">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Telefon:</label> <input
+					class="form-control" placeholder="Telefon"
+					ng-model="dostavljac.telefon">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Adresa:</label> <input
+					class="form-control" placeholder="Adresa"
+					ng-model="dostavljac.adresa">
+			</div>
+			<button class="btn btn-primary" ng-click="izmeni()">Izmeni</button>
+		</form>
+	</div>
+</div>

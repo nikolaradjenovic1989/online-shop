@@ -1,0 +1,63 @@
+<div class="row" ng-controller="homeCtrl">
+
+	<div class="col-lg-3">
+		<h1 class="display-4">Lista korisnika</h1>
+
+		&nbsp;
+		<div class="form-group">
+			<button class="btn btn-success" ng-click="goToDodajDostavljaca()">
+				<i class="fa fa-plus" aria-hidden="true"></i> Dostavljač
+			</button>
+			<a class="btn btn-info" href="/#!/kreirajIzvestaj">
+				<i class="fa fa-plus" aria-hidden="true"></i> Kreiraj izveštaj
+			</a>
+		</div>
+	</div>
+
+	<div class="col-lg-9">
+
+		<div class="col-xs-12">
+
+			<table class="table table-striped table-borderd">
+
+				<thead>
+					<tr>
+						<th>Ime</th>
+						<th>Prezime</th>
+						<th>Korisničko ime</th>
+						<th>Telefon</th>
+						<th>Email</th>
+						<th>Adresa</th>
+						<th>Uloga</th>
+						<th>Akcija</th>
+					</tr>
+
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="k in korisnici">
+						<td>{{k.ime}}</td>
+						<td>{{k.prezime}}</td>
+						<td>{{k.korisnickoIme}}</td>
+						<td>{{k.telefon}}</td>
+						<td>{{k.email}}</td>
+						<td>{{k.adresa}}</td>
+						<td><select ng-model="k.uloga">
+								<option ng-repeat="u in uloge" value="{{u}}"
+									ng-selected="k.uloga == u">{{u}}</option>
+						</select></td>
+						<td><a ng-show="k.tip_korisnika == 2"
+							class="btn btn-warning btn-lg btn-block" href=""
+							ng-click="goToEditDostavljac(k.id)"><i class="fa fa-pencil"
+								aria-hidden="true"></i></a><a ng-show="k.tip_korisnika == 2"
+							class="btn btn-danger btn-lg btn-block" href=""
+							ng-click="obrisiDostavljaca(k.id)"><i class="fa fa-trash"
+								aria-hidden="true"></i></a><a class="btn btn-info btn-lg btn-block"
+							href="" ng-click="snimiPromenu(k)"><i class="fa fa-save"></i></a></td>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+</div>
